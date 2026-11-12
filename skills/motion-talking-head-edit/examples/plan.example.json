@@ -1,0 +1,25 @@
+{
+  "source": "talk.mp4",
+  "matte": "matte.mp4",
+  "out": "edit.mp4",
+  "size": [1080, 1920],
+  "fps": 30,
+  "theme": { "accent": "#5ec8ff", "card_bg": "#121214" },
+  "captions": [
+    { "start": 0.1, "end": 1.7, "kicker": "Most founders chase", "emphasis": "attention" },
+    { "start": 1.7, "end": 3.5, "kicker": "but what really compounds is", "emphasis": "trust" },
+    { "start": 7.8, "end": 9.6, "kicker": "every single customer", "emphasis": "remembers" },
+    { "start": 12.2, "end": 15.0, "kicker": "that's why", "emphasis": "ယုံကြည်မှု" }
+  ],
+  "beats": [
+    { "type": "text_behind", "start": 0.9, "end": 2.4, "text": "Attention", "y": 0.2 },
+    { "type": "text_behind", "start": 2.4, "end": 3.8, "text": "Trust", "y": 0.2 },
+    { "type": "keyword_card", "start": 3.8, "end": 6.0,
+      "kicker": "It quietly builds your", "text": "Network", "network": true },
+    { "type": "broll", "start": 6.0, "end": 7.8, "src": "broll_shop.mp4", "text": "Customers" },
+    { "type": "counter_card", "start": 9.6, "end": 12.2,
+      "kicker": "One happy client brings", "from": 0, "to": 10, "step": 1,
+      "label": "New referrals" },
+    { "type": "text_behind", "start": 12.2, "end": 15.0, "text": "Everything", "y": 0.18, "gauge": true }
+  ]
+}
