@@ -59,8 +59,10 @@ Details for 7–9 are in `references/craft-standards.md`.
 
 When the user shares a video and asks what's good or what's lacking:
 
-1. **Get the actual video.** Facebook and Instagram links need a login and can't be fetched. Ask for the
-   downloaded mp4 or a YouTube link, or a description and timestamps. **Never invent what a video contains.**
+1. **Get the actual video.** Public Facebook/Instagram/TikTok/YouTube links: download with `yt-dlp` into the scratchpad,
+   then `ffmpeg` frames at 2fps → contact sheets (`tile=5x2`), plus `volumedetect` for audio levels. Burned-in captions give the script.
+   If the download fails (private / login-walled), ask for the mp4 or a description. **Never invent what a video contains.**
+   Save each audit to `audits/` so the skill learns from every reference.
 2. Write a **timeline breakdown**: 0–1.5s / 1.5–5s / middle beats / payoff / close. Note what is seen, heard and on screen.
 3. Score it with `references/scorecard.md` (10 components × 0–2 = /20).
 4. Report in this order:
@@ -84,6 +86,17 @@ Low reach overall?
                          └─ All good, still small?                   → audience ring too broad or too narrow; post consistently
 ```
 Never fix editing first. Topic, angle and hook cause most flops.
+
+### Read the retention graph first (when you have analytics)
+| Graph shape | Diagnosis | Fix |
+|---|---|---|
+| Steep cliff in the first 1–3s, then flat near zero | **Bad hook** | Rebuild the hook stack; start on the 2nd sentence |
+| Steady straight-line decline from start to end | **Weak topic / angle**: nobody cares enough | Re-validate the topic; sharpen the angle |
+| Early cliff, then flat but low | **Weak content overall**: hook *and* body | Re-plan from the idea |
+| Holds well, then a sharp drop near the end | **Weak close / CTA**: people leave before the ask | Move the payoff earlier; shorter, aligned CTA |
+| Mid-video dip | **Sagging middle** | Cut fluff, add a pattern interrupt or open loop there |
+| Small early dip, then nearly flat and high (or above 100% with rewatches) | **The goal** | Repeat this format as a series |
+(Learned from an audited reference reel: `audits/2026-11_retention-graph-reel.md`.)
 
 ---
 
