@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="my" data-draft="true">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The CEO System | Dr. Sai</title>
+<meta name="description" content="CEO ရဲ့ အလုပ်ကို စနစ်တစ်ခုအဖြစ် ချရေးထားတာ — Dr. Sai">
+<meta property="og:title" content="The CEO System | Dr. Sai">
+
+<!--
+  ============================================================
+  EDIT HERE — everything only Dr. Sai can decide lives in CONFIG.
+  While data-draft="true" (on <html>), unfilled slots show as
+  dashed boxes. Set data-draft="false" to hide every unfilled slot
+  before going live. Never fill a slot with invented proof.
+  ============================================================
+-->
+<script>
+const CONFIG = {
+  ctaUrl: "#join",            // checkout / Telegram / form link
+  ctaLabel: "CEO System ထဲ ဝင်မယ်",
+  price: "",                  // e.g. "150,000 Ks"
+  priceNote: "",              // e.g. "တစ်ကြိမ်တည်း ပေးချေရုံ။ တစ်သက်တာ ဝင်ခွင့်။"
+  guarantee: "",              // e.g. "ရက် ၃၀ အတွင်း မကျေနပ်ရင် ငွေအပြည့် ပြန်အမ်းမယ်။"
+  access: "",                 // FAQ: how the system is delivered (video / Telegram / live)
+  time: "",                   // FAQ: how long it takes to go through
+  portrait: "",               // e.g. "img/dr-sai.jpg" (rendered greyscale)
+  testimonials: [
+    // { quote: "…", name: "…", role: "…" }   real words, with permission, only
+  ]
+};
+</script>
+
+<style>
+@font-face{font-family:'Walone';src:url('fonts/Walone-Thin.ttf') format('truetype');font-weight:200;font-display:swap}
+@font-face{font-family:'Walone';src:url('fonts/Walone-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Walone';src:url('fonts/Walone-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:'Sahara';src:url('fonts/Sahara-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Sahara';src:url('fonts/Sahara-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+@font-face{font-family:'HelveticaBrand';src:url('fonts/Helvetica.ttf') format('truetype');font-weight:400;font-display:swap;unicode-range:U+0000-024F,U+2000-22FF}
+@font-face{font-family:'HelveticaBrand';src:url('fonts/Helvetica-Bold.ttf') format('truetype');font-weight:700;font-display:swap;unicode-range:U+0000-024F,U+2000-22FF}
+
+:root{
+  --void:#0A0A0A; --storm-900:#2A2A2A; --storm-500:#6B6B6B;
+  --ink:#F1F1F1; --grey:#BDBDBD; --white:#FFFFFF;
+  --gold:#F5B400; --gold-hi:#FFD23F; --amber:#FF8A00;
+  --latin:'HelveticaBrand',Helvetica,Arial,sans-serif;
+  --body:'HelveticaBrand','Walone',Helvetica,Arial,sans-serif;
+  --head:'HelveticaBrand','Sahara','Walone',Helvetica,Arial,sans-serif;
+  --edge:clamp(20px,6vw,96px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 var(--edge)}
+section{padding:clamp(72px,11vw,150px) 0;border-top:1px solid var(--storm-900)}
+
+/* type */
+.kicker{font-family:var(--latin);font-weight:700;font-size:13px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.kicker.q{color:var(--storm-500)}
+h1,h2,h3{font-family:var(--head);font-weight:700;color:var(--white);line-height:1.66;text-wrap:balance}
+h1{font-size:clamp(30px,4.6vw,58px)}
+h2{font-size:clamp(28px,4.2vw,50px)}
+h3{font-size:clamp(21px,2.3vw,26px)}
+.g{color:var(--gold)}
+.stack{white-space:pre-line;max-width:34em;color:var(--grey)}
+.stack b{color:var(--white);font-weight:700}
+.lede{font-size:clamp(18px,1.9vw,21px);color:var(--grey);max-width:30em;margin-top:28px}
+.quiet{font-weight:200;color:var(--grey)}
+.en{font-family:var(--latin)}
+
+/* signature + button */
+.sig{display:flex;align-items:center;gap:18px;font-family:var(--latin);font-size:17px;letter-spacing:.02em;color:var(--grey)}
+.sig::before{content:"";width:54px;height:2px;background:var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:var(--void);font-family:var(--head);font-weight:700;font-size:18px;line-height:1.5;padding:18px 34px;border-radius:2px;transition:background .2s}
+.btn:hover{background:var(--gold-hi)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--white);outline-offset:4px}
+.under{margin-top:18px;font-size:15px;color:var(--storm-500)}
+
+/* nav */
+nav{position:absolute;top:0;left:0;right:0;z-index:2;padding:28px 0}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+nav a.link{font-family:var(--latin);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+nav a.link:hover{color:var(--white)}
+
+/* hero — one light */
+.hero{position:relative;border-top:0;min-height:100vh;display:flex;align-items:flex-end;padding:160px 0 clamp(56px,8vw,110px)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(42% 46% at 82% 22%,rgba(245,180,0,.34),rgba(255,138,0,.10) 45%,transparent 72%),
+             linear-gradient(0deg,rgba(0,0,0,.82),transparent 60%)}
+.hero::after{content:"";position:absolute;right:calc(var(--edge) + 14%);top:15%;width:1px;height:46%;background:linear-gradient(var(--gold-hi),transparent);opacity:.7}
+.hero .wrap{position:relative;width:100%}
+.hero h1{text-shadow:0 2px 30px rgba(0,0,0,.55)}
+.hero .btn{margin-top:44px}
+.stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(28px,6vw,84px);margin-top:clamp(56px,8vw,96px);padding-top:32px;border-top:1px solid var(--storm-900)}
+.stats b{display:block;font-family:var(--latin);font-weight:700;font-size:clamp(34px,4.6vw,56px);line-height:1.1;color:var(--white)}
+.stats span{font-size:15px;color:var(--grey)}
+
+/* two-column blocks */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,7vw,110px);align-items:start}
+.split h2{position:sticky;top:48px;font-size:clamp(26px,3.3vw,40px)}
+
+/* compare */
+.compare{display:grid;grid-template-columns:1fr 1fr;margin-top:64px;border:1px solid var(--storm-900)}
+.compare>div{padding:clamp(28px,4vw,52px)}
+.compare>div+div{border-left:1px solid var(--storm-900);background:linear-gradient(180deg,rgba(245,180,0,.07),transparent 60%)}
+.compare .tag{font-family:var(--latin);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--storm-500)}
+.compare h3{margin:6px 0 22px}
+.compare li{list-style:none;padding:13px 0 13px 34px;border-top:1px solid var(--storm-900);position:relative;color:var(--grey)}
+.compare li::before{content:"✕";position:absolute;left:0;font-family:var(--latin);color:var(--storm-500)}
+.compare div+div li{color:var(--ink)}
+.compare div+div li::before{content:"✓";color:var(--gold)}
+
+/* the system */
+.berg{display:block;width:100%;max-width:760px;margin:56px auto 0}
+.berg text{font-family:var(--latin);font-weight:700;letter-spacing:.3em;font-size:12px;fill:var(--grey)}
+.jobs{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border:1px solid var(--storm-900)}
+.jobs article{padding:clamp(26px,3.4vw,44px)}
+.jobs article+article{border-left:1px solid var(--storm-900)}
+.num{font-family:var(--latin);font-weight:700;font-size:13px;letter-spacing:.3em;color:var(--storm-500)}
+.jobs .tag,.inner .tag{font-family:var(--latin);font-size:12px;letter-spacing:.3em;color:var(--storm-500);text-transform:uppercase}
+.jobs h3{margin:14px 0 2px}
+.jobs .ask{color:var(--white);margin:14px 0 10px}
+.jobs p,.inner p{color:var(--grey);font-size:17px}
+.inner{border:1px solid var(--storm-900);border-top:0;padding:clamp(26px,3.4vw,44px);display:grid;grid-template-columns:1fr 2fr;gap:32px;background:linear-gradient(180deg,transparent,rgba(107,107,107,.08))}
+
+/* grids */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:64px;border-top:1px solid var(--storm-900)}
+.grid>div{padding:36px 36px 36px 0;border-bottom:1px solid var(--storm-900)}
+.grid>div:nth-child(even){padding-left:36px;padding-right:0;border-left:1px solid var(--storm-900)}
+.grid h3{margin:10px 0 8px}
+.grid p{color:var(--grey);font-size:17px}
+.kit{grid-template-columns:repeat(4,1fr)}
+.kit>div,.kit>div:nth-child(even){padding:30px 26px;border-left:1px solid var(--storm-900)}
+.kit>div:nth-child(4n+1){border-left:0;padding-left:0}
+.kit h3{font-size:19px}
+.kit p{font-size:15.5px}
+
+/* paths + price */
+.paths{margin-top:56px;border-top:1px solid var(--storm-900)}
+.paths>div{display:grid;grid-template-columns:1fr 2fr;gap:32px;padding:28px 0;border-bottom:1px solid var(--storm-900);color:var(--grey)}
+.paths b{font-family:var(--head);color:var(--white);font-size:20px}
+.paths>div:last-child{color:var(--ink)}
+.paths>div:last-child b{color:var(--gold)}
+.price{margin-top:64px;border:1px solid var(--storm-900);padding:clamp(32px,5vw,64px);display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.price .amt{font-family:var(--latin);font-weight:700;font-size:clamp(40px,6vw,72px);line-height:1.15;color:var(--white)}
+.price p{color:var(--grey);margin-top:10px}
+
+/* story */
+.story{margin-top:64px;display:grid;grid-template-columns:5fr 7fr;gap:clamp(40px,6vw,96px)}
+.portrait{aspect-ratio:4/5;background:radial-gradient(60% 50% at 70% 20%,rgba(245,180,0,.28),transparent 70%),#111;position:sticky;top:48px;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}
+.chapter{padding:34px 0;border-top:1px solid var(--storm-900)}
+.chapter:first-child{border-top:0;padding-top:0}
+.chapter h3{margin:10px 0 14px}
+
+/* voices, fit, faq */
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.voices blockquote{border:1px solid var(--storm-900);padding:32px;color:var(--ink)}
+.voices cite{display:block;margin-top:20px;font-style:normal;font-size:15px;color:var(--grey)}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);margin-top:56px}
+.fit li{list-style:none;padding:16px 0;border-top:1px solid var(--storm-900);color:var(--grey)}
+.fit div:first-child li{color:var(--ink)}
+details{border-top:1px solid var(--storm-900)}
+details:last-of-type{border-bottom:1px solid var(--storm-900)}
+summary{cursor:pointer;list-style:none;padding:26px 40px 26px 0;position:relative;font-family:var(--head);font-weight:700;font-size:20px;color:var(--white);line-height:1.66}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:22px;font-family:var(--latin);font-weight:400;font-size:26px;color:var(--grey)}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 28px;color:var(--grey);max-width:38em}
+
+/* close */
+.close{position:relative;text-align:center;overflow:hidden}
+.close::before{content:"";position:absolute;inset:0;background:radial-gradient(36% 60% at 50% 110%,rgba(245,180,0,.30),transparent 70%);pointer-events:none}
+.close .wrap{position:relative}
+.close h2{font-size:clamp(30px,4.8vw,58px)}
+.close .btn{margin-top:48px}
+.close .sig{justify-content:center;margin-top:72px}
+footer{border-top:1px solid var(--storm-900);padding:36px 0;font-family:var(--latin);font-size:13px;color:var(--storm-500)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+/* draft slots */
+.fill{border:1px dashed var(--storm-500);padding:14px 18px;color:var(--storm-500);font-family:var(--latin);font-size:13px;letter-spacing:.06em;line-height:1.6}
+[data-draft="false"] .fill,[data-draft="false"] .draft-only{display:none!important}
+
+@media (max-width:860px){
+  body{font-size:17px}
+  nav a.link{display:none}
+  .hero{min-height:0;padding-top:140px}
+  .hero::before{background:radial-gradient(70% 34% at 86% 12%,rgba(245,180,0,.34),rgba(255,138,0,.10) 45%,transparent 72%),linear-gradient(0deg,rgba(0,0,0,.82),transparent 60%)}
+  .hero::after{right:16%;top:6%;height:22%}
+  .hero .btn,.close .btn,.price .btn{display:block;text-align:center}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .stats span{font-size:13px}
+  .split,.compare,.jobs,.inner,.grid,.kit,.story,.voices,.fit,.price,.paths>div{grid-template-columns:1fr}
+  .split h2,.portrait{position:static}
+  .compare>div+div,.jobs article+article{border-left:0;border-top:1px solid var(--storm-900)}
+  .grid>div,.grid>div:nth-child(even),.kit>div,.kit>div:nth-child(even){padding:28px 0;border-left:0}
+  .paths>div{gap:6px}
+  .portrait{max-width:420px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="sig"><span>Dr. <b style="color:var(--white)">Sai</b></span></a>
+    <a class="link" href="#join">The CEO System</a>
+  </div>
+</nav>
+
+<!-- 1 · HERO -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="kicker">The CEO System</p>
+    <h1>CEO ဆိုတဲ့ ရာထူးကို ရခဲ့တယ်။<br>CEO ရဲ့ <span class="g">အလုပ်</span>ကိုတော့<br>ဘယ်သူမှ မသင်ပေးခဲ့ဘူး။</h1>
+    <p class="lede">လုပ်ငန်း ၁၃ ခု တည်ဆောက်ရင်း၊ ဝန်ထမ်း ၃၀၀ ကျော်ကို ဦးဆောင်ရင်း ကျွန်တော် သင်ယူခဲ့ရတဲ့ CEO ရဲ့ အလုပ်ကို စနစ်တစ်ခုအဖြစ် ချရေးထားတာပါ။</p>
+    <a class="btn" data-cta href="#join">CEO System ထဲ ဝင်မယ်</a>
+    <div class="stats">
+      <div><b>13</b><span>တည်ဆောက်ခဲ့တဲ့ လုပ်ငန်း</span></div>
+      <div><b>300+</b><span>ဦးဆောင်ခဲ့တဲ့ ဝန်ထမ်း</span></div>
+      <div><b>1,000s</b><span>Hysan Education ကျောင်းသား</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- 2 · THE FRAME -->
+<section>
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="kicker q">The frame</p>
+        <h2>လုပ်ငန်း မကြီးတာ<br>market ကြောင့် မဟုတ်ဘူး။<br><span class="g">ပိုင်ရှင်</span>ကြောင့်။</h2>
+      </div>
+      <p class="stack">လုပ်ငန်း စစချင်းမှာ
+ကျွန်တော် အကုန် ကိုယ်တိုင် လုပ်ခဲ့တယ်။
+
+အဲဒီတုန်းက ဒါက မှန်တယ်။
+လုပ်ငန်းကို ရှင်သန်စေခဲ့တာ
+အဲဒီ ကြိုးစားမှုပဲ။
+
+ဒါပေမဲ့ ကုမ္ပဏီ ကြီးလာတော့
+ကျွန်တော့် ကြိုးစားမှုက
+လုပ်ငန်းကို မကြီးစေတော့ဘူး။
+
+<b>ပိတ်ဆို့ထားတယ်။</b>
+
+လုပ်ငန်းကို စတင်ပေးခဲ့တဲ့ အကျင့်က
+လုပ်ငန်းကို ကြီးထွားစေမယ့် အကျင့် မဟုတ်ဘူး။
+
+ဒါကို ဘယ်သူမှ မပြောပြခဲ့ဘူး။
+CEO အတွက် သင်ရိုး မရှိဘူး။
+
+<b>ဒါကြောင့် ကျွန်တော် ကိုယ်တိုင် ချရေးခဲ့တယ်။</b></p>
+    </div>
+
+    <div class="compare">
+      <div>
+        <span class="tag">Operator</span>
+        <h3>လုပ်သူ</h3>
+        <ul>
+          <li>လုပ်ငန်းထဲမှာ အလုပ်လုပ်တယ်</li>
+          <li>ပြက္ခဒိန်က ကိုယ့်ကို မောင်းတယ်</li>
+          <li>ဆုံးဖြတ်ချက်တိုင်း ကိုယ့်ဆီ ရောက်လာတယ်</li>
+          <li>နေ့တိုင်း မီးငြှိမ်းနေရတယ်</li>
+        </ul>
+      </div>
+      <div>
+        <span class="tag">CEO</span>
+        <h3>ဦးဆောင်သူ</h3>
+        <ul>
+          <li>လုပ်ငန်းကို တည်ဆောက်တယ်</li>
+          <li>ကိုယ့်အချိန်ကို ကိုယ် ရွေးတယ်</li>
+          <li>အဖွဲ့က ကိုယ်တိုင် ဆုံးဖြတ်နိုင်တယ်</li>
+          <li>ပြဿနာ အများစုက ကိုယ့်ဆီ မရောက်ခင် ပြီးသွားတယ်</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · THE SYSTEM -->
+<section id="system">
+  <div class="wrap">
+    <p class="kicker q">The system</p>
+    <h2>CEO ရဲ့ အလုပ်က<br><span class="g">သုံးခု</span>ပဲ ရှိတယ်။</h2>
+    <p class="lede">ရေပေါ်မှာ မြင်ရတာက အလုပ် သုံးခု။ ရေအောက်မှာ အဲဒီ သုံးခုလုံးကို ထမ်းထားတာက စိတ်။</p>
+
+    <svg class="berg" viewBox="0 0 760 420" role="img" aria-label="ရေခဲတောင် — ရေပေါ်မှာ Direction, People, Refusal။ ရေအောက်မှာ The Inner Game။">
+      <g fill="none" stroke="#F1F1F1" stroke-width="1">
+        <path d="M380 24 L500 170 L260 170 Z"/>
+        <path d="M340 73 L420 73 M300 121 L460 121"/>
+        <path d="M260 170 L150 300 L300 396 L470 396 L610 300 L500 170" stroke="#6B6B6B"/>
+      </g>
+      <line x1="40" y1="170" x2="720" y2="170" stroke="#F5B400" stroke-width="2"/>
+      <text x="520" y="55">01 DIRECTION</text>
+      <text x="520" y="102">02 PEOPLE</text>
+      <text x="520" y="150">03 REFUSAL</text>
+      <text x="380" y="292" text-anchor="middle">THE INNER GAME</text>
+    </svg>
+
+    <div class="jobs">
+      <article>
+        <span class="num">01</span>
+        <h3>ဦးတည်ချက်</h3><span class="tag">Direction</span>
+        <p class="ask">ဘယ်ကို သွားမလဲ။</p>
+        <p>နိုင်တဲ့ စစ်သူကြီးက တိုက်ပွဲ မစခင်ကတည်းက နိုင်ပြီးသား။ လှုပ်ရှားမှု မတိုင်ခင် ဗျူဟာ။ အဖွဲ့တစ်ခုလုံး မြင်နိုင်တဲ့ စာမျက်နှာ တစ်မျက်နှာ။</p>
+      </article>
+      <article>
+        <span class="num">02</span>
+        <h3>လူ</h3><span class="tag">People</span>
+        <p class="ask">ဘယ်သူနဲ့ သွားမလဲ။</p>
+        <p>မမှန်တဲ့ leadership က လူကို မဖျက်ဘူး။ culture ကို ဖျက်တယ်။ လူရွေးတာ၊ စံသတ်မှတ်တာ၊ တာဝန်ကို တကယ် လွှဲပေးတာ။</p>
+      </article>
+      <article>
+        <span class="num">03</span>
+        <h3>ငြင်းပယ်မှု</h3><span class="tag">Refusal</span>
+        <p class="ask">ဘာကို မလုပ်ဘူးလဲ။</p>
+        <p>CEO ရဲ့ တန်ဖိုးက လုပ်တာတွေထဲမှာ မရှိဘူး။ ငြင်းတာတွေထဲမှာ ရှိတယ်။ အာရုံစိုက်မှုကိုယ်တိုင်က ဗျူဟာ။</p>
+      </article>
+    </div>
+    <div class="inner">
+      <div><span class="num">00</span><h3 style="margin-top:14px">စိတ်</h3><span class="tag">The inner game</span></div>
+      <p>အကျပ်အတည်းထဲမှာ တည်ငြိမ်နိုင်မှ ဆုံးဖြတ်ချက် မှန်တယ်။ ဒေါသထွက်နေတဲ့ CEO က ရန်သူကို အပြင်မှာ ရှာတယ်။ ဗုဒ္ဓရဲ့ ရှင်းလင်းမြင်မှုနဲ့ ဆွန်ဇူရဲ့ ဗျူဟာကို လုပ်ငန်းခွင်ထဲ တကယ် သုံးတဲ့ အပိုင်း။</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · WHAT CHANGES -->
+<section>
+  <div class="wrap">
+    <p class="kicker q">What changes</p>
+    <h2>အလုပ်ပိုလုပ်ဖို့ မဟုတ်ဘူး။<br>ဆုံးဖြတ်ချက် <span class="g">ပိုမှန်</span>ဖို့။</h2>
+    <div class="grid">
+      <div><span class="num">01</span><h3>ကိုယ့်အချိန်က အရေးကြီးဆုံး နေရာကို ရောက်တယ်။</h3><p>ဘာကို ကိုယ်တိုင် ကိုင်မလဲ၊ ဘာကို လွှဲမလဲ၊ ဘာကို ရပ်မလဲ ရှင်းသွားတယ်။</p></div>
+      <div><span class="num">02</span><h3>ဗျူဟာက ခေါင်းထဲကနေ စာရွက်ပေါ် ရောက်တယ်။</h3><p>တစ်ယောက်တည်း ထမ်းထားရတဲ့ အစီအစဉ်ကို အဖွဲ့တစ်ခုလုံး မြင်နိုင်သွားတယ်။</p></div>
+      <div><span class="num">03</span><h3>အဖွဲ့က ကိုယ့်ကို မစောင့်ဘဲ ဆုံးဖြတ်နိုင်တယ်။</h3><p>စံက ရှင်းရင် ခွင့်တောင်းစရာ မလိုတော့ဘူး။</p></div>
+      <div><span class="num">04</span><h3>ဈေးနဲ့ မပြိုင်တော့ဘူး။</h3><p>product ကို မပြောင်းဘဲ customer ခေါင်းထဲက အမြင်ကို ပြောင်းတယ်။ Perception Ocean။</p></div>
+      <div><span class="num">05</span><h3>အကျပ်အတည်းမှာ တည်ငြိမ်တယ်။</h3><p>စိတ်လှုပ်ရှားမှုနဲ့ မဆုံးဖြတ်တော့ဘူး။ မြင်ပြီးမှ ဆုံးဖြတ်တယ်။</p></div>
+      <div><span class="num">06</span><h3>ကိုယ် မရှိလည်း လုပ်ငန်း လည်ပတ်တယ်။</h3><p>လူတစ်ယောက်ပေါ် မှီတဲ့ လုပ်ငန်းကနေ စနစ်ပေါ် မှီတဲ့ လုပ်ငန်း ဖြစ်သွားတယ်။</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · WHAT'S INSIDE -->
+<section>
+  <div class="wrap">
+    <p class="kicker q">Inside the system</p>
+    <h2>သဘောတရား မဟုတ်ဘူး။<br>ဒီအပတ်ပဲ သုံးလို့ရတဲ့ <span class="g">ကိရိယာ</span>။</h2>
+    <div class="grid kit">
+      <div><span class="num">01</span><h3>CEO ရဲ့ အလုပ် ၃ ခု Masterclass</h3><p>ဦးတည်ချက်၊ လူ၊ ငြင်းပယ်မှု။ တစ်ခုချင်းကို ဘယ်လို လုပ်ရမလဲ။</p></div>
+      <div><span class="num">02</span><h3>ဦးတည်ချက် မြေပုံ</h3><p>ရည်မှန်းချက်နဲ့ ဦးစားပေးကို စာမျက်နှာ တစ်မျက်နှာတည်းပေါ် တင်တဲ့ template။</p></div>
+      <div><span class="num">03</span><h3>လူနဲ့ စံ</h3><p>လူရွေးနည်း၊ culture၊ "ကောင်းတယ်ဆိုတာ ဘာလဲ" ကို ရှင်းအောင် ရေးနည်း။</p></div>
+      <div><span class="num">04</span><h3>Weekly Decision Sheet</h3><p>အပတ်စဉ် မေးခွန်း သုံးခု။ ဘယ်ကို၊ ဘယ်သူနဲ့၊ ဘာကို မလုပ်ဘူး။</p></div>
+      <div><span class="num">05</span><h3>Perception Ocean Worksheet</h3><p>WHAT ကနေ WHO ဆီ။ မေးခွန်း ငါးခုနဲ့ ဈေးပြိုင်ပွဲထဲက ထွက်နည်း။</p></div>
+      <div><span class="num">06</span><h3>လုပ်ငန်း စည်းချက်</h3><p>အပတ်စဉ်၊ လစဉ်၊ သုံးလတစ်ကြိမ်။ အစည်းအဝေးက အရေးကြီးတာပေါ်မှာပဲ တည်အောင်။</p></div>
+      <div><span class="num">07</span><h3>စိတ်ရဲ့ အလေ့အကျင့်</h3><p>ဆုံးဖြတ်ချက် ခက်ခက်တွေ ရှေ့မှာ တည်ငြိမ်မှုကို ဘယ်လို ထိန်းမလဲ။</p></div>
+      <div><span class="num">08</span><h3>လက်တွေ့ လမ်းညွှန်</h3><p>အဖွဲ့အရွယ်အစားအလိုက် ဘယ်ကစ၊ ဘာကို အရင်လုပ်။</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · THREE ROADS + PRICE -->
+<section id="join">
+  <div class="wrap">
+    <p class="kicker q">Three roads</p>
+    <h2>CEO ဖြစ်ဖို့<br>လမ်း <span class="g">သုံးသွယ်</span> ရှိတယ်။</h2>
+    <div class="paths">
+      <div><b>MBA</b><span>နှစ်တွေ ကုန်တယ်။ သင်ရတာတွေက ကိုယ့်လုပ်ငန်းနဲ့ ဝေးတယ်။</span></div>
+      <div><b>ကိုယ်တိုင် မှားပြီး သင်</b><span>အခမဲ့ မဟုတ်ဘူး။ အမှားတိုင်းကို လူ၊ ငွေ၊ အချိန်နဲ့ ပေးရတယ်။</span></div>
+      <div><b>The CEO System</b><span>ချရေးပြီးသား မြေပုံ။ ကိုယ့်လုပ်ငန်းထဲမှာ ဒီအပတ်ပဲ စသုံးလို့ရတယ်။</span></div>
+    </div>
+
+    <div class="price">
+      <div>
+        <div class="amt" data-slot="price"></div>
+        <p data-slot="priceNote"></p>
+        <p data-slot="guarantee"></p>
+      </div>
+      <a class="btn" data-cta href="#join">CEO System ထဲ ဝင်မယ်</a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · VOICES (renders only from CONFIG.testimonials) -->
+<section id="voices">
+  <div class="wrap">
+    <p class="kicker q">In their words</p>
+    <h2>စနစ်ကို သုံးပြီးသူတွေရဲ့ <span class="g">စကား</span>။</h2>
+    <div class="voices" data-voices></div>
+  </div>
+</section>
+
+<!-- 8 · WHY ME -->
+<section>
+  <div class="wrap">
+    <p class="kicker q">Why listen to me</p>
+    <h2>ဒါကို စာအုပ်ထဲက မသင်ခဲ့ဘူး။<br><span class="g">ဘဝ</span>ထဲက သင်ခဲ့တာ။</h2>
+    <div class="story">
+      <div class="portrait" data-portrait></div>
+      <div>
+        <div class="chapter">
+          <span class="num">01 / တာဝန်</span>
+          <h3>တာဝန်ဆိုတာ ဘာလဲ စောစော သိခဲ့ရတယ်။</h3>
+          <p class="stack">အသက် ၉ နှစ်မှာ အဖေက ဖားကန့်ကို သွားတယ်။
+ပြန်လာတော့ ဆေးစွဲနေပြီ။
+
+အသက် ၁၄ နှစ်မှာ အဖေ ဆုံးတယ်။
+
+ဆယ်ကျော်သက်အရွယ်မှာ စာသင်ပြီး
+မိသားစုကို ထောက်ပံ့ခဲ့ရတယ်။
+
+ဦးဆောင်မှုကို ကျွန်တော် ရွေးခဲ့တာ မဟုတ်ဘူး။
+ဘဝက အရင် ပေးလိုက်တာ။</p>
+        </div>
+        <div class="chapter">
+          <span class="num">02 / တည်ဆောက်မှု</span>
+          <h3>လုပ်ငန်း ၁၃ ခု။ ဝန်ထမ်း ၃၀၀ ကျော်။</h3>
+          <p class="stack">လွယ်လွယ်နဲ့ သင်ခဲ့ရတာ တစ်ခုမှ မရှိဘူး။
+
+အလုပ်များတာနဲ့ ဦးဆောင်တာ
+မတူဘူးဆိုတာကို
+ဝန်ထမ်း ၃၀၀ က ကျွန်တော့်ကို သင်ပေးခဲ့တယ်။</p>
+        </div>
+        <div class="chapter">
+          <span class="num">03 / သက်သေ</span>
+          <h3>Hysan Education</h3>
+          <p class="stack">ရန်ကုန်မှာ အင်္ဂလိပ်စာ ကျောင်းတွေ
+ရေတောင် မရေနိုင်ဘူး။
+
+ဈေးနဲ့ ပြိုင်ရင် ရှုံးမှာ သေချာတယ်။
+ဒါကြောင့် ပြိုင်ပွဲကိုပဲ ပြောင်းလိုက်တယ်။
+
+အင်္ဂလိပ်စာ မရောင်းဘူး။
+မကြောက်တော့တဲ့ လူငယ်တစ်ယောက်
+ဖြစ်သွားတာကို ရောင်းတယ်။
+
+အခု ကျောင်းသား ထောင်ချီရဲ့ ဘဝကို
+ပြောင်းလဲပေးနေတယ်။</p>
+        </div>
+        <div class="chapter">
+          <span class="num">04 / စနစ်</span>
+          <h3>အမှားတိုင်းကို စနစ်တစ်ခု ဖြစ်အောင် ချရေးခဲ့တယ်။</h3>
+          <p class="stack">ဗုဒ္ဓရဲ့ ရှင်းလင်းမြင်မှု။
+ဆွန်ဇူရဲ့ ဗျူဟာ။
+ခေတ်သစ် လုပ်ငန်း တည်ဆောက်နည်း။
+
+သုံးခုလုံးကို တစ်နေရာတည်းမှာ
+လက်တွေ့ သုံးလို့ရအောင် ပေါင်းထားတာ
+The CEO System ပါ။</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · FIT -->
+<section>
+  <div class="wrap">
+    <p class="kicker q">Who it is for</p>
+    <h2>လူတိုင်းအတွက် <span class="g">မဟုတ်ဘူး</span>။</h2>
+    <div class="fit">
+      <div>
+        <h3>ဒီစနစ်နဲ့ ကိုက်တဲ့သူ</h3>
+        <ul>
+          <li>အဖွဲ့ရှိပြီ။ ဒါပေမဲ့ အရာရာ ကိုယ့်ဆီမှာ ပိတ်နေတယ်လို့ ခံစားရတဲ့ လုပ်ငန်းရှင်</li>
+          <li>ဦးဆောင်ရမယ့် နေရာကို ရောက်လာတဲ့ manager နဲ့ operator</li>
+          <li>စိတ်ဓာတ်မြှင့်စကား မဟုတ်ဘဲ စဉ်းစားနည်းကို လိုချင်သူ</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="quiet">မကိုက်တဲ့သူ</h3>
+        <ul>
+          <li>မြန်မြန် ချမ်းသာနည်း ရှာနေသူ</li>
+          <li>ကိုယ်တိုင် မပြောင်းဘဲ အဖွဲ့ကိုပဲ ပြောင်းချင်သူ</li>
+          <li>ဖတ်ရုံ ဖတ်ပြီး လက်တွေ့ မသုံးမယ့်သူ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · FAQ -->
+<section>
+  <div class="wrap">
+    <p class="kicker q">Questions</p>
+    <h2>မေးလေ့ရှိတဲ့ <span class="g">မေးခွန်း</span>များ</h2>
+    <div style="margin-top:56px">
+      <details><summary>လုပ်ငန်း သေးသေးလေးပဲ ရှိသေးတယ်။ ကိုက်မလား။</summary><p>လူ တစ်ယောက်ကိုပဲ ဦးဆောင်နေရရင်တောင် CEO ရဲ့ အလုပ် သုံးခုက စနေပြီ။ စောစော သင်လေ၊ အမှားတွေရဲ့ ဈေး သက်သာလေပါ။</p></details>
+      <details><summary>business စာအုပ်တွေ အများကြီး ဖတ်ပြီးပြီ။ ဘာကွာလဲ။</summary><p>စာအုပ်က သဘောတရားကို ပေးတယ်။ ဒီစနစ်က မြန်မာ လုပ်ငန်းခွင်ထဲမှာ တကယ် သုံးခဲ့တဲ့ template နဲ့ အဆင့်တွေကို ပေးတယ်။ ဖတ်ဖို့ မဟုတ်ဘူး။ သုံးဖို့ပါ။</p></details>
+      <details><summary>ဗုဒ္ဓဘာသာနဲ့ ဆွန်ဇူက လုပ်ငန်းနဲ့ ဘယ်လို ဆိုင်လဲ။</summary><p>ဘာသာရေး သင်တန်း မဟုတ်ပါဘူး။ ရှင်းရှင်း မြင်ဖို့နဲ့ တိုက်ပွဲ မစခင် နိုင်ဖို့ ကိရိယာအဖြစ် သုံးထားတာပါ။ စိတ် မငြိမ်ရင် ဗျူဟာ မမှန်ဘူး။</p></details>
+      <details data-faq="time"><summary>အချိန် ဘယ်လောက် ပေးရမလဲ။</summary><p data-slot="time"></p></details>
+      <details data-faq="access"><summary>ဘယ်လို ဝင်ရမလဲ။ ဘယ်မှာ ကြည့်ရမလဲ။</summary><p data-slot="access"></p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · CLOSE -->
+<section class="close">
+  <div class="wrap">
+    <h2>အလုပ်များတာ<br>ခေါင်းဆောင်မှု မဟုတ်ဘူး။<br>မှန်တာကို ရွေးနိုင်တာက<br><span class="g">ခေါင်းဆောင်မှု</span>။</h2>
+    <a class="btn" data-cta href="#join">CEO System ထဲ ဝင်မယ်</a>
+    <div class="sig"><span>Dr. <b style="color:var(--white)">Sai</b></span></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© Dr. Sai · The CEO System</span><span>Break the Frame.</span></div></footer>
+
+<script>
+(function(){
+  var C = CONFIG, $ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+  var slot = function(name, hint){
+    $('[data-slot="'+name+'"]').forEach(function(el){
+      if (C[name]) { el.textContent = C[name]; }
+      else { el.textContent = hint; el.className = 'fill'; }
+    });
+  };
+  $('[data-cta]').forEach(function(a){ a.href = C.ctaUrl; a.textContent = C.ctaLabel; });
+  slot('price', 'PRICE · set CONFIG.price');
+  slot('priceNote', 'PRICE NOTE · billing terms, set CONFIG.priceNote');
+  slot('guarantee', 'GUARANTEE · only if you will honour it, set CONFIG.guarantee');
+  slot('time', 'Set CONFIG.time');
+  slot('access', 'Set CONFIG.access');
+
+  var live = document.documentElement.getAttribute('data-draft') === 'false';
+  ['time','access'].forEach(function(k){ if (!C[k] && live) $('[data-faq="'+k+'"]').forEach(function(d){ d.remove(); }); });
+
+  var v = $('[data-voices]')[0];
+  if (C.testimonials.length) {
+    C.testimonials.forEach(function(t){
+      var b = document.createElement('blockquote'), c = document.createElement('cite');
+      b.textContent = '“' + t.quote + '”'; c.textContent = t.name + (t.role ? ' · ' + t.role : '');
+      b.appendChild(c); v.appendChild(b);
+    });
+  } else if (live) { document.getElementById('voices').remove(); }
+  else { for (var i = 0; i < 3; i++) { var d = document.createElement('div'); d.className = 'fill'; d.textContent = 'TESTIMONIAL SLOT · real words, with permission, in CONFIG.testimonials'; v.appendChild(d); } }
+
+  var p = $('[data-portrait]')[0];
+  if (C.portrait) { var im = new Image(); im.src = C.portrait; im.alt = 'Dr. Sai'; p.appendChild(im); }
+  else if (!live) { var f = document.createElement('div'); f.className = 'fill'; f.style.margin = '24px'; f.textContent = 'PORTRAIT · set CONFIG.portrait (shown greyscale)'; p.appendChild(f); }
+})();
+</script>
+</body>
+</html>
